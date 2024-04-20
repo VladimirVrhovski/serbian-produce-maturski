@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Онлајн продавница домаћих производа</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<h1>Онлајн продавница домаћих производа</h1>
+		</header>
+		<main>
+			<section class="proizvodi">
+				<h2>Производи</h2>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/products.jpg" alt="Proizvod 1" />
+							<h3>Proizvod 1</h3>
+							<p>Opis proizvoda 1.</p>
+							<span class="cena">1.000 дин</span>
+						</a>
+						<button
+							class="dodaj-u-korpu"
+							data-id="pr1"
+							data-naziv="Prvi"
+							data-cena="1000"
+							data-slika="images/products.jpg"
+						>
+							Dodaj u korpu
+						</button>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/products.jpg" alt="Proizvod 2" />
+							<h3>Proizvod 2</h3>
+							<p>Opis proizvoda 2.</p>
+							<span class="cena">2.000 дин</span>
+						</a>
+						<button
+							class="dodaj-u-korpu"
+							data-id="pr2"
+							data-naziv="Drugi"
+							data-cena="2000"
+							data-slika="images/products.jpg"
+						>
+							Dodaj u korpu
+						</button>
+					</li>
+				</ul>
+			</section>
+			<section class="o-nama">
+				<h2>О нама</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+					amet pretium urna. Donec ultricies neque eget neque ultricies, eget
+					hendrerit nibh ultricies. Nunc accumsan, ipsum sed dignissim feugiat,
+					risus nisl egestas massa, in pulvinar neque leo ac lectus. Fusce
+					aliquam risus sit amet sapien lobortis, eu hendrerit nibh ultricies.
+					Fusce aliquam risus sit amet sapien lobortis, eu hendrerit nibh
+					ultricies.
+				</p>
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2023 Онлајн продавница домаћих производа</p>
+		</footer>
+	</body>
+</html>
+
+/* Resetovanje stilova */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Stilovi za body */
+body {
+	font-family: sans-serif;
+}
+
+/* Stilovi za header */
+header {
+	background-color: #f5f5f5;
+	padding: 20px;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 24px;
+	margin-bottom: 0;
+}
+
+/* Stilovi za main */
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+/* Stilovi za section */
+section {
+	width: 48%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+/* Stilovi za proizvode */
+.proizvodi ul {
+	list-style: none;
+	padding: 0;
+}
+
+.proizvodi li {
+	margin-bottom: 20px;
+}
+
+.proizvodi a {
+	text-decoration: none;
+	color: #333;
+}
+
+.proizvodi img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.proizvodi h3 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.proizvodi p {
+	margin-bottom: 10px;
+}
+
+.proizvodi .cena {
+	font-weight: bold;
+}
+
+/* Stilovi za o nama */
+.o-nama p {
+	text-align: justify;
+}
+
+/* Stilovi za footer */
+footer {
+	background-color: #f5f5f5;
+	text-align: center;
+	padding: 10px;
+}
+
+footer p {
+	font-size: 0.8em;
+	margin-bottom: 0;
+}
+
+// Selektujemo sve dugmice za dodavanje proizvoda
+const dodajUBKorpuDugmici = document.querySelectorAll(".dodaj-u-korpu");
+
+// Dodajemo event listener za klik na svaku dugme
+dodajUBKorpuDugmici.forEach((dugme) => {
+	dugme.addEventListener("click", () => {
+		// Uzimamo informacije o proizvodu
+		const idProizvoda = dugme.dataset.id;
+		const nazivProizvoda = dugme.dataset.naziv;
+		const cenaProizvoda = dugme.dataset.cena;
+		const slikaProizvoda = dugme.dataset.slika;
+
+		// Kreiramo objekat za proizvod
+		const proizvod = {
+			id: idProizvoda,
+			naziv: nazivProizvoda,
+			cena: cenaProizvoda,
+			slika: slikaProizvoda,
+			kolicina: 1,
+		};
+
+		// Uzimamo korpu iz lokalne memorije (ili je kreiramo ako ne postoji)
+		let korpa = JSON.parse(localStorage.getItem("korpa")) || [];
+
+		// Provjeravamo da li proizvod već postoji u korpi
+		const postojeciProizvod = korpa.find((p) => p.id === proizvod.id);
+
+		if (postojeciProizvod) {
+			// Ako postoji, povećavamo količinu
+			postojeciProizvod.kolicina++;
+		} else {
+			// Ako ne postoji, dodajemo ga u korpu
+			korpa.push(proizvod);
+		}
+
+		// Spremamo korpu u lokalnu memoriju
+		localStorage.setItem("korpa", JSON.stringify(korpa));
+
+		// Prikažemo poruku o dodavanju proizvoda
+		alert(`${proizvod.naziv} je dodat u korpu!`);
+	});
+});
