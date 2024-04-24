@@ -275,7 +275,7 @@ iframe {
 }
 .main-logo {
 	margin-inline-end: auto;
-	height: 100%;
+	max-height: 100%;
 	aspect-ratio: 6;
 }
 .main-logo img {
@@ -351,7 +351,7 @@ iframe {
 	display: grid;
 	gap: var(--size-700);
 	grid-template-areas: "cta" "links" "fLogo" "social";
-	padding: 2rem 3rem;
+	padding: 2rem 0;
 	align-items: center;
 	justify-items: center;
 
@@ -368,6 +368,8 @@ iframe {
 	display: flex;
 	flex-direction: column;
 	gap: var(--size-400);
+	text-align: center;
+	padding: 0;
 }
 .footer-link {
 	text-decoration: none;
@@ -381,8 +383,9 @@ iframe {
 }
 
 .footer-logo {
-	height: 70px;
+	max-height: 70px;
 	aspect-ratio: 6;
+	padding-inline: var(--size-200);
 }
 .footer-logo img {
 	height: 100%;
@@ -409,10 +412,18 @@ iframe {
 	width: 100%;
 }
 
+.call-to-action .text-input {
+	max-width: max(150px, 50vw);
+}
+
 @media (min-width: 72em) {
 	.footer-nav {
 		grid-template-areas: "fLogo links cta" "social links cta";
 		align-items: flex-start;
+		padding: 2rem 3rem;
+	}
+	.footer-links {
+		text-align: left;
 	}
 }
 
@@ -420,6 +431,7 @@ iframe {
 
 .social-list {
 	display: flex;
+	padding: 0;
 	gap: var(--size-600);
 }
 
@@ -433,13 +445,13 @@ iframe {
 	fill: var(--clr-accent-400);
 }
 
-@media (min-width: 72em) {
+@media (max-width: 72em) {
 	.social-icon {
 		width: var(--size-500);
 		max-width: revert;
 	}
 	.social-list {
-		gap: var(--size-300);
+		gap: var(--size-200);
 	}
 }
 
