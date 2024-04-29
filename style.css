@@ -239,7 +239,8 @@ iframe {
 	grid-template-columns: 1fr 1fr;
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100svh;
+	min-height: 100dvh;
 	justify-content: center;
 	align-items: flex-end;
 	padding-block-end: var(--size-400);
