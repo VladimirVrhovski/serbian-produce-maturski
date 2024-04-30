@@ -17,6 +17,12 @@
 	--clr-accent-400: hsl(353, 97%, 43%);
 	--clr-accent-100: hsl(207, 70%, 78%);
 
+	--clr-primary-400: hsl(0, 0%, 25%);
+	--clr-neutral-900: hsl(240, 28%, 12%);
+	--clr-neutral-200: hsl(206, 42%, 57%);
+	--clr-accent-400: hsl(353, 97%, 43%);
+	--clr-accent-100: hsl(207, 70%, 78%);
+
 	--fw-regular: 400;
 	--fw-semi-bold: 500;
 	--fw-bold: 700;
@@ -95,11 +101,6 @@ body {
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }
-
-/* A elements that don't have a class get default styles */
-/* a:not([class]) {
-	text-decoration-skip-ink: auto;
-} */
 
 img {
 	max-width: 100%;
@@ -621,11 +622,11 @@ iframe {
 .padding-inline-500 {
 	padding-inline: var(--size-500);
 }
-.resp-padding-inlne-700 {
+.resp-padding-inline-700 {
 	padding-inline: var(--size-700);
 }
 @media (max-width: 42em) {
-	.resp-padding-inlne-700 {
+	.resp-padding-inline-700 {
 		padding-inline: var(--size-100);
 	}
 }
@@ -690,7 +691,7 @@ iframe {
 	padding: 0 !important;
 	margin: -1px !important;
 	overflow: hidden !important;
-	clip: rect(0, 0, 0, 0) !important;
+	clip-path: rect(0, 0, 0, 0) !important;
 	white-space: nowrap !important;
 	border: 0 !important;
 }
