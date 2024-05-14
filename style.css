@@ -1,28 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-	/* --clr-primary-400: hsl(211, 89%, 25%);
-	--clr-neutral-900: hsl(240, 61%, 14%);
-	--clr-neutral-900-04: hsla(240, 61%, 14%, 0.4);
-	--clr-neutral-900-06: hsla(240, 61%, 14%, 0.6);
-	--clr-neutral-900-08: hsla(240, 61%, 14%, 0.8);
-	--clr-neutral-200: hsl(198, 77%, 72%);
-	--clr-neutral-200-07: hsla(198, 77%, 72%, 0.7);
-	--clr-accent-400: hsl(32, 93%, 54%);
-	--clr-accent-100: hsl(55, 76%, 87%); */
-
-	/* --clr-primary-400: hsl(0, 0%, 35%);
-	--clr-neutral-900: hsl(240, 98%, 22%);
-	--clr-neutral-200: hsl(206, 42%, 57%);
-	--clr-accent-400: hsl(353, 97%, 43%);
-	--clr-accent-100: hsl(207, 70%, 78%); */
-
-	/* --clr-primary-400: hsl(0, 0%, 25%);
-	--clr-neutral-900: hsl(240, 28%, 12%);
-	--clr-neutral-200: hsl(206, 42%, 57%);
-	--clr-accent-400: hsl(353, 97%, 43%);
-	--clr-accent-100: hsl(207, 70%, 78%); */
-
 	--clr-primary-400: #122f3a;
 	--clr-neutral-900: #234956;
 	--clr-neutral-200: #b4e8ed;
@@ -136,7 +114,7 @@ select {
 	}
 }
 
-/* Genral styling */
+/* General styling */
 
 body {
 	font-family: "Montserrat", "Courier New", Courier, monospace;
@@ -256,17 +234,12 @@ iframe {
 	background-position: center;
 }
 .hero-container {
-	/* position: absolute;
-	bottom: 0;
-	left: 0;
-	margin: 0 0 2rem min(2rem, 3vw); */
 	max-width: 600px;
 	margin-inline: auto;
 }
 .hero-text {
 	color: var(--clr-neutral-900);
 	padding: var(--size-700);
-	/* max-width: 50ch; */
 	border-radius: var(--size-400);
 	background-color: var(--clr-accent-100);
 	box-shadow: 0 0 10px var(--clr-neutral-900);
@@ -319,11 +292,7 @@ iframe {
 .active-link {
 	color: var(--clr-accent-400);
 }
-/* .active-link:hover,
-.active-link:focus-visible,
-.active-link {
-	color: var(--clr-accent-400);
-} */
+
 .main-logo {
 	margin-inline-end: auto;
 	max-height: 100%;
@@ -534,22 +503,6 @@ iframe {
 }
 .text-neutral-900 {
 	color: var(--clr-neutral-900);
-}
-
-.background-primary-400 {
-	background-color: var(--clr-primary-400);
-}
-.background-accent-400 {
-	background-color: var(--clr-accent-400);
-}
-.background-accent-100 {
-	background-color: var(--clr-accent-100);
-}
-.background-neutral-200 {
-	background-color: var(--clr-neutral-200);
-}
-.background-neutral-900 {
-	background-color: var(--clr-neutral-900);
 }
 
 .fw-bold {
