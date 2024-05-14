@@ -188,6 +188,15 @@ iframe {
 	height: 100%;
 }
 
+.more-link {
+	text-decoration: underline;
+	color: var(--clr-primary-400);
+}
+.more-link:hover {
+	color: var(--clr-accent-400);
+	cursor: pointer;
+}
+
 .pill-bg-r-u,
 .pill-bg-l-d {
 	position: relative;
@@ -619,6 +628,10 @@ iframe {
 }
 .text-right {
 	text-align: right;
+}
+
+.tw-pretty {
+	text-wrap: pretty;
 }
 
 .grid-center {
